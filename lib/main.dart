@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_advanced/provider/example_one_provider.dart';
+import 'package:provider_advanced/provider/favourite_provider.dart';
 import 'package:provider_advanced/screens/example_one_screen.dart';
+import 'package:provider_advanced/screens/favourite/favorite_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,16 +17,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(
-          create: (_) => ExampleOneProvider(),
-        )
+        ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+        ChangeNotifierProvider(create: (_) => FavouriteProvider()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ExampleOneScreen(),
+        home: const FavouriteScreen(),
       ),
     );
   }
