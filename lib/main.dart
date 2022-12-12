@@ -4,6 +4,7 @@ import 'package:provider_advanced/provider/example_one_provider.dart';
 import 'package:provider_advanced/provider/favourite_provider.dart';
 import 'package:provider_advanced/screens/example_one_screen.dart';
 import 'package:provider_advanced/screens/favourite/favorite_screen.dart';
+import 'package:provider_advanced/screens/favourite/notify_listener_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const FavouriteScreen(),
+        home: NotifyListenerScreen(),
       ),
     );
   }
