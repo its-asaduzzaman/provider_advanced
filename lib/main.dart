@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:provider_advanced/provider/auth_provider.dart';
 import 'package:provider_advanced/provider/example_one_provider.dart';
 import 'package:provider_advanced/provider/favourite_provider.dart';
 import 'package:provider_advanced/screens/example_one_screen.dart';
 import 'package:provider_advanced/screens/favourite/favorite_screen.dart';
 import 'package:provider_advanced/screens/favourite/notify_listener_screen.dart';
+import 'package:provider_advanced/screens/login_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,13 +22,14 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+          primarySwatch: Colors.deepOrange,
         ),
-        home: NotifyListenerScreen(),
+        home: const LoginScreen(),
       ),
     );
   }
